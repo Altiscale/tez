@@ -1,7 +1,6 @@
 Apache Tez Change Log
 =====================
 
-
 Release 0.7.0: 2015-05-18
 
 INCOMPATIBLE CHANGES
@@ -11,6 +10,7 @@ INCOMPATIBLE CHANGES
     Default max limit increased. Should not affect existing users.
 
 ALL CHANGES:
+  TEZ-2440. Sorter should check for indexCacheList.size() in flush()
   TEZ-2446. Tez UI: Add tezVersion details when downloading timeline data for offline use
   TEZ-2432. Syntax error in DOAP file release section
   TEZ-2445. Disable the object cleanup in local mode in LogicalIOProcessorRuntimeTask.
