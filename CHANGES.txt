@@ -856,6 +856,7 @@ ALL CHANGES:
   TEZ-1856. Remove LocalOnFileSortedOutput, LocalMergedInput, LocalTaskOutputFiles.
   TEZ-1949. Whitelist TEZ_RUNTIME_OPTIMIZE_SHARED_FETCH for broadcast edges.
   TEZ-1593. Refactor PipelinedSorter to remove all MMAP based ByteBuffer references.
+  TEZ-1408. SLF4J related warnings when using minimal tarball.
 
 Release 0.6.3: Unreleased
 
