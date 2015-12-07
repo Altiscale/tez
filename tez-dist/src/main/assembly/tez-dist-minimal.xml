@@ -39,6 +39,7 @@
               <exclude>org.apache.hadoop:hadoop-yarn-client</exclude>
               <exclude>org.apache.hadoop:hadoop-yarn-common</exclude>
               <exclude>org.apache.tez:*</exclude>
+              <exclude>org.slf4j:*</exclude>
             </excludes>
           </dependencySet>
         </dependencySets>
