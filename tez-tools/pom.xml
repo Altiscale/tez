@@ -27,7 +27,9 @@
   <packaging>pom</packaging>
 
   <modules>
+<!--
     <module>analyzers</module>
+-->
     <module>tez-javadoc-tools</module>
   </modules>
 
