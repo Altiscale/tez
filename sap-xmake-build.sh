@@ -70,6 +70,8 @@ tar xvf tez-${TEZ_VERSION}-minimal.tar.gz
 
 cd ${RPM_DIR}
 
+source /usr/local/rvm/scripts/rvm
+
 fpm --verbose \
 --maintainer support@altiscale.com \
 --vendor Altiscale \
