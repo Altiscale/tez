@@ -1,0 +1,5 @@
+imports dslVersion:"1.2", {
+  targetRootDir id:"default",{
+    artifactFile "com.google.code.download.protobuf:protobuf:zip:src:2.5.0-sap-01"
+  }
+}
