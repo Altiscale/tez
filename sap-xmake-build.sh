@@ -1,10 +1,17 @@
-#!/bin/sh -ex
+#!/bin/bash -l
 
 # find this script and establish base directory
 SCRIPT_DIR="$( dirname "${BASH_SOURCE[0]}" )"
 cd "$SCRIPT_DIR" &> /dev/null
 MY_DIR="$(pwd)"
 echo "[INFO] Executing in ${MY_DIR}"
+
+# PATH does not contain mvn in this login shell
+export M2_HOME=/opt/mvn3
+export JAVA_HOME=/opt/sapjvm_7
+export PATH=$M2_HOME/bin:$JAVA_HOME/bin:$PATH
+export PATH=/opt/protobuf/bin:$PATH
+mvn -version
 
 #------------------------------------------------------------------------------
 #
@@ -16,6 +23,8 @@ echo "[INFO] Executing in ${MY_DIR}"
 echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
 
 HADOOP_VERSION="${HADOOP_VERSION:-2.7.3}"
+SKIPTESTS_BOOL=true
+IGNORE_TESTFAILURES_BOOL=true
 env
 MVN_SKIPTESTS_BOOL=${SKIPTESTS_BOOL:-false}
 if [ "${MVN_SKIPTESTS_BOOL}" != "true" ] ; then
@@ -70,8 +79,6 @@ tar xvf tez-${TEZ_VERSION}-minimal.tar.gz
 
 cd ${RPM_DIR}
 
-source /usr/local/rvm/scripts/rvm
-
 fpm --verbose \
 --maintainer support@altiscale.com \
 --vendor Altiscale \
@@ -91,6 +98,4 @@ fpm --verbose \
 --rpm-group root \
 -C ${INSTALL_DIR} \
 opt etc
-
-rpm -ql ${RPM_DIR}/*.rpm
 
