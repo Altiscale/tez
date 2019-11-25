@@ -6,7 +6,7 @@ cd "$SCRIPT_DIR" &> /dev/null
 MY_DIR="$(pwd)"
 echo "[INFO] Executing in ${MY_DIR}"
 
-# PATH does not contain mvn in this login shell
+# PATH does not contain mvn and protobuf in this login shell
 export M2_HOME=/opt/mvn3
 export JAVA_HOME=/opt/sapjvm_7
 export PATH=$M2_HOME/bin:$JAVA_HOME/bin:$PATH
@@ -36,6 +36,7 @@ if [ "${MVN_IGNORE_TESTFAILURES_BOOL}" != "true" ] ; then
     MVN_IGNORE_TESTFAILURES_BOOL=false
 fi
 
+
 mvn clean -PcleanUICache package -Dtar \
 -Dmaven.test.skip=${MVN_SKIPTESTS_BOOL} \
 -DskipTests=${MVN_SKIPTESTS_BOOL} \
@@ -43,6 +44,9 @@ mvn clean -PcleanUICache package -Dtar \
 -DtestFailureIgnore=${MVN_IGNORE_TESTFAILURES_BOOL} \
 -Dmaven.javadoc.skip=true
 
+if [[ "$?" -ne 0 ]] ; then
+  echo 'Error compiling and packaging tez'; exit 1
+fi
 
 #------------------------------------------------------------------------------
 #
@@ -53,7 +57,7 @@ mvn clean -PcleanUICache package -Dtar \
 ALTISCALE_RELEASE="${ALTISCALE_RELEASE:-5.0.0}"
 TEZ_VERSION="${TEZ_VERSION:-0.8.4}"
 ARTIFACT_VERSION="$TEZ_VERSION"
-DATE_STRING="20191120175300"
+DATE_STRING="201911245120386"
 GIT_REPO="https://github.com/Altiscale/tez"
 
 INSTALL_DIR="$MY_DIR/tezrpmbuild"
@@ -99,3 +103,4 @@ fpm --verbose \
 -C ${INSTALL_DIR} \
 opt etc
 
+exit 0
