@@ -36,7 +36,6 @@ if [ "${MVN_IGNORE_TESTFAILURES_BOOL}" != "true" ] ; then
     MVN_IGNORE_TESTFAILURES_BOOL=false
 fi
 
-
 mvn clean -PcleanUICache package -Dtar \
 -Dmaven.test.skip=${MVN_SKIPTESTS_BOOL} \
 -DskipTests=${MVN_SKIPTESTS_BOOL} \
@@ -57,7 +56,7 @@ fi
 ALTISCALE_RELEASE="${ALTISCALE_RELEASE:-5.0.0}"
 TEZ_VERSION="${TEZ_VERSION:-0.8.4}"
 ARTIFACT_VERSION="$TEZ_VERSION"
-DATE_STRING="201911245120386"
+DATE_STRING=`date +%Y%m%d%H%M%S`
 GIT_REPO="https://github.com/Altiscale/tez"
 
 INSTALL_DIR="$MY_DIR/tezrpmbuild"
