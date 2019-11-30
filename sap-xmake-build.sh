@@ -11,7 +11,11 @@ export M2_HOME=/opt/mvn3
 export JAVA_HOME=/opt/sapjvm_7
 export PATH=$M2_HOME/bin:$JAVA_HOME/bin:$PATH
 export PATH=/opt/protobuf/bin:$PATH
+export NODE_DOWNLOAD_ROOT=$XMAKE_IMPORTREPO_COMMON/org/nodejs/download/node/node/
+export NPM_DOWNLOAD_ROOT=$XMAKE_IMPORTREPO_COMMON/org/nodejs/download/npm/npm/
 mvn -version
+
+cd $MY_DIR/tez-ui2/
 
 #------------------------------------------------------------------------------
 #
@@ -41,7 +45,9 @@ mvn clean -PcleanUICache package -Dtar \
 -DskipTests=${MVN_SKIPTESTS_BOOL} \
 -Dmaven.test.failure.ignore=${MVN_IGNORE_TESTFAILURES_BOOL} \
 -DtestFailureIgnore=${MVN_IGNORE_TESTFAILURES_BOOL} \
--Dmaven.javadoc.skip=true
+-Dmaven.javadoc.skip=true \
+-DnodeDownloadRoot=$NODE_DOWNLOAD_ROOT \
+-DnpmDownloadRoot=$NPM_DOWNLOAD_ROOT$(mvn -q -Dexec.executable="echo" -Dexec.args='${npmVersion}' --non-recursive exec:exec)/
 
 if [[ "$?" -ne 0 ]] ; then
   echo 'Error compiling and packaging tez'; exit 1
@@ -49,7 +55,7 @@ fi
 
 #------------------------------------------------------------------------------
 #
-#  ***** setup the environment generating RPM via fpm *****
+#  ***** setup the environment for generating TEZ RPM via fpm *****
 #
 #------------------------------------------------------------------------------
 
