@@ -15,7 +15,7 @@ export NODE_DOWNLOAD_ROOT=$XMAKE_IMPORTREPO_COMMON/org/nodejs/download/node/node
 export NPM_DOWNLOAD_ROOT=$XMAKE_IMPORTREPO_COMMON/org/nodejs/download/npm/npm/
 mvn -version
 
-cd $MY_DIR/tez-ui2/
+cd $MY_DIR
 
 #------------------------------------------------------------------------------
 #
