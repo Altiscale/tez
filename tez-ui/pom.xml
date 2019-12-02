@@ -83,7 +83,7 @@
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>install --registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.snapshots/org/webjars/npm/</arguments>
+              <arguments>install --registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm/</arguments>
             </configuration>
           </execution>
         </executions>
