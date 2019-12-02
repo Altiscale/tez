@@ -16,7 +16,7 @@
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-cssmin": "~0.6.0",
     "grunt-contrib-connect": "~0.3.0",
-    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-watch": "~0.5.2",
     "grunt-rev": "~0.1.0",
     "grunt-usemin": "~0.1.12",
