@@ -82,6 +82,9 @@
             <goals>
               <goal>npm</goal>
             </goals>
+            <configuration>
+              <arguments>install --registry=http://registry.npmjs.org/</arguments>
+            </configuration>
           </execution>
         </executions>
       </plugin>
