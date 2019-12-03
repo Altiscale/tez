@@ -24,7 +24,8 @@ cd $MY_DIR
 #------------------------------------------------------------------------------
 
 # allowing to install bower as root and updating the registry URL to avoid 502
-echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
+#echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
+echo '{ "allow_root": true, "registry": "http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm" }' > /root/.bowerrc
 
 HADOOP_VERSION="${HADOOP_VERSION:-2.7.3}"
 SKIPTESTS_BOOL=true
