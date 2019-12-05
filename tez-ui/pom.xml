@@ -83,7 +83,7 @@
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>install --registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm/ --phantomjs_cdnurl=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.snapshots/com/github/klieber/phantomjs/1.9.8/ --unsafe-perm</arguments>
+              <arguments>install</arguments>
             </configuration>
           </execution>
         </executions>

@@ -27,6 +27,11 @@ cd $MY_DIR
 #echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
 echo '{ "allow_root": true, "registry": "http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm" }' > /root/.bowerrc
 
+cat <<EOT >> /root/.npmrc
+registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm/
+phantomjs_cdnurl=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.snapshots/com/github/klieber/phantomjs/1.9.8/
+EOT
+
 HADOOP_VERSION="${HADOOP_VERSION:-2.7.3}"
 SKIPTESTS_BOOL=true
 IGNORE_TESTFAILURES_BOOL=true
