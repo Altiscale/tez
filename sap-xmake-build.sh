@@ -80,7 +80,7 @@ export RPM_DESCRIPTION="Apache Tez ${ARTIFACT_VERSION}\n\n${DESCRIPTION}"
 export RPM_DIR="${RPM_DIR:-"${INSTALL_DIR}/tez-artifact/"}"
 mkdir --mode=0755 -p ${RPM_DIR}
 
-echo "Packaging tez rpm with name ${RPM_NAME} with version ${ARTIFACT_VERSION}-${DATE_STRING}"
+echo "Packaging Tez rpm with name ${RPM_NAME} with version ${ARTIFACT_VERSION}-${DATE_STRING}"
 
 export RPM_BUILD_DIR="${INSTALL_DIR}/opt/tez-${TEZ_VERSION}"
 mkdir --mode=0755 -p ${RPM_BUILD_DIR}
