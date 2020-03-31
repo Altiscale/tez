@@ -15,8 +15,8 @@
     "ember-addons.bs_for_ember": "~0.7.0",
     "ember-table": "~0.2.4",
     "font-awesome": "4.2.0",
-    "FileSaver.js": "https://github.com/eligrey/FileSaver.js.git#24b303f49213b905ec9062b708f7cd43d56a5dde",
-    "zip.js": "https://github.com/gildas-lormeau/zip.js.git#bfd76c66293305faaf9fcbb65b5ff7fe2dbe621a",
+    "FileSaver.js": "../../../../sap-xmake-bower/FileSaver.js/",
+    "zip.js": "../../../../sap-xmake-bower/zip.js/",
     "codemirror": "~5.2.0"
   },
   "resolutions": {
