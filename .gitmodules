@@ -1,3 +1,6 @@
 [submodule "sap-xmake-bower/FileSaver.js"]
 	path = sap-xmake-bower/FileSaver.js
 	url = https://github.com/eligrey/FileSaver.js.git
+[submodule "sap-xmake-bower/zip.js"]
+	path = sap-xmake-bower/zip.js
+	url = https://github.com/gildas-lormeau/zip.js.git
