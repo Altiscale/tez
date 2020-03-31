@@ -13,6 +13,8 @@ export PATH=$M2_HOME/bin:$JAVA_HOME/bin:$PATH
 export PATH=/opt/protobuf/bin:$PATH
 export NODE_DOWNLOAD_ROOT=$XMAKE_IMPORTREPO_COMMON/org/nodejs/download/node/node/
 export NPM_DOWNLOAD_ROOT=$XMAKE_IMPORTREPO_COMMON/org/nodejs/download/npm/npm/
+export TEZ_UI_BOWERRC_DIR=${MY_DIR}/tez-ui/src/main/webapp
+export TEZ_UI2_BOWERRC_DIR=${MY_DIR}/tez-ui2/src/main/webapp
 mvn -version
 
 cd $MY_DIR
@@ -27,6 +29,10 @@ cd $MY_DIR
 # echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
 
 echo '{ "allow_root": true, "registry": { "search": ["https://nexus.wdf.sap.corp:8443/nexus/content/groups/build.releases.bower/"], "register":"https://nexus.wdf.sap.corp:8443/nexus/content/groups/build.releases.bower/" }, "resolvers": ["bower-nexus3-resolver"], "strict-ssl": false, "https-proxy": "" }' > /root/.bowerrc
+
+echo '{ "directory": "app/bower_components", "scripts": { "postinstall": "/bin/bash ../../../../sap-xmake-bower/scripts/copy-tez-ui-bower.sh " } }' > ${TEZ_UI_BOWERRC_DIR}/.bowerrc
+
+echo '{ "directory": "bower_components", "analytics": false, "scripts": { "postinstall": "/bin/bash ../../../../sap-xmake-bower/scripts/copy-tez-ui2-bower.sh " } }' > ${TEZ_UI2_BOWERRC_DIR}/.bowerrc
 
 cat <<EOT >> /root/.npmrc
 registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm/
