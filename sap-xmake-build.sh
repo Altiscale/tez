@@ -122,4 +122,6 @@ fpm --verbose \
 -C ${INSTALL_DIR} \
 opt etc
 
+mv "${RPM_DIR}"/"${RPM_NAME}"-"${ALTISCALE_RELEASE}"-"${DATE_STRING}".x86_64.rpm "${RPM_DIR}"/alti-hadoop-"${XMAKE_PROJECT_VERSION}".rpm
+
 exit 0
