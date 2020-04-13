@@ -29,6 +29,8 @@ cd $MY_DIR
 
 echo '{ "allow_root": true, "registry": { "search": ["https://nexus.wdf.sap.corp:8443/nexus/content/groups/build.releases.bower/"], "register":"https://nexus.wdf.sap.corp:8443/nexus/content/groups/build.releases.bower/" }, "resolvers": ["bower-nexus3-resolver"], "strict-ssl": false, "https-proxy": "" }' > /root/.bowerrc
 
+echo '{ "directory": "app/bower_components", "scripts": { "postinstall": "/bin/bash ../../../../sap-xmake-bower/scripts/copy-tez-ui-bower.sh " } }' > ${TEZ_UI_BOWERRC_DIR}/.bowerrc
+
 cat <<EOT > /root/.npmrc
 registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm/
 phantomjs_cdnurl=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.snapshots/com/github/klieber/phantomjs/1.9.8/
