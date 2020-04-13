@@ -25,7 +25,9 @@ cd $MY_DIR
 #------------------------------------------------------------------------------
 
 # allowing to install bower as root and updating the registry URL to avoid 502
-echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
+#echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
+
+echo '{ "allow_root": true, "registry": { "search": ["https://nexus.wdf.sap.corp:8443/nexus/content/groups/build.releases.bower/"], "register":"https://nexus.wdf.sap.corp:8443/nexus/content/groups/build.releases.bower/" }, "resolvers": ["bower-nexus3-resolver"], "strict-ssl": false, "https-proxy": "" }' > /root/.bowerrc
 
 cat <<EOT > /root/.npmrc
 registry=http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.milestones.npm/
