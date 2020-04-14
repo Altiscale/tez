@@ -96,7 +96,7 @@ cd ${RPM_BUILD_DIR}
 mkdir --mode=0755 lib
 
 export DIST_DIR="${MY_DIR}/tez-dist/target"
-cp ${DIST_DIR}/tez-${TEZ_VERSION}.tar.gz .
+#cp ${DIST_DIR}/tez-${TEZ_VERSION}.tar.gz .
 cp ${DIST_DIR}/tez-${TEZ_VERSION}-minimal.tar.gz .
 tar xvf tez-${TEZ_VERSION}-minimal.tar.gz
 
